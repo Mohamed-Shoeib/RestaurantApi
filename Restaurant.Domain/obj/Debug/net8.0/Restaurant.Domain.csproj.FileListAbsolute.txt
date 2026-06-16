@@ -1,0 +1,11 @@
+D:\MVC\Restaurant.Api\Restaurant.Domain\bin\Debug\net8.0\Restaurant.Domain.deps.json
+D:\MVC\Restaurant.Api\Restaurant.Domain\bin\Debug\net8.0\Restaurant.Domain.dll
+D:\MVC\Restaurant.Api\Restaurant.Domain\bin\Debug\net8.0\Restaurant.Domain.pdb
+D:\MVC\Restaurant.Api\Restaurant.Domain\obj\Debug\net8.0\Restaurant.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\MVC\Restaurant.Api\Restaurant.Domain\obj\Debug\net8.0\Restaurant.Domain.AssemblyInfoInputs.cache
+D:\MVC\Restaurant.Api\Restaurant.Domain\obj\Debug\net8.0\Restaurant.Domain.AssemblyInfo.cs
+D:\MVC\Restaurant.Api\Restaurant.Domain\obj\Debug\net8.0\Restaurant.Domain.csproj.CoreCompileInputs.cache
+D:\MVC\Restaurant.Api\Restaurant.Domain\obj\Debug\net8.0\Restaurant.Domain.dll
+D:\MVC\Restaurant.Api\Restaurant.Domain\obj\Debug\net8.0\refint\Restaurant.Domain.dll
+D:\MVC\Restaurant.Api\Restaurant.Domain\obj\Debug\net8.0\Restaurant.Domain.pdb
+D:\MVC\Restaurant.Api\Restaurant.Domain\obj\Debug\net8.0\ref\Restaurant.Domain.dll
