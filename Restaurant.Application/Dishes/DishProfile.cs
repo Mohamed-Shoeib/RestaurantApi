@@ -13,6 +13,7 @@ namespace Restaurant.Application.Dishes
         public DishProfile()
         {
             CreateMap<Dish, DishDto>();
+            CreateMap<CreateDishDto, Dish>();
         }
         
     }

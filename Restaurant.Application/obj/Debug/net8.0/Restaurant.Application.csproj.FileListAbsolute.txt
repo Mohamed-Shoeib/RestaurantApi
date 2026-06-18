@@ -13,3 +13,4 @@ D:\MVC\Restaurant.Api\Restaurant.Application\obj\Debug\net8.0\Restaurant.Applica
 D:\MVC\Restaurant.Api\Restaurant.Application\obj\Debug\net8.0\refint\Restaurant.Application.dll
 D:\MVC\Restaurant.Api\Restaurant.Application\obj\Debug\net8.0\Restaurant.Application.pdb
 D:\MVC\Restaurant.Api\Restaurant.Application\obj\Debug\net8.0\ref\Restaurant.Application.dll
+D:\MVC\Restaurant.Api\Restaurant.Application\obj\Debug\net8.0\Restaurant.Application.sourcelink.json

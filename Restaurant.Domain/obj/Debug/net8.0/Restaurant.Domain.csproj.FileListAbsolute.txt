@@ -9,3 +9,4 @@ D:\MVC\Restaurant.Api\Restaurant.Domain\obj\Debug\net8.0\Restaurant.Domain.dll
 D:\MVC\Restaurant.Api\Restaurant.Domain\obj\Debug\net8.0\refint\Restaurant.Domain.dll
 D:\MVC\Restaurant.Api\Restaurant.Domain\obj\Debug\net8.0\Restaurant.Domain.pdb
 D:\MVC\Restaurant.Api\Restaurant.Domain\obj\Debug\net8.0\ref\Restaurant.Domain.dll
+D:\MVC\Restaurant.Api\Restaurant.Domain\obj\Debug\net8.0\Restaurant.Domain.sourcelink.json

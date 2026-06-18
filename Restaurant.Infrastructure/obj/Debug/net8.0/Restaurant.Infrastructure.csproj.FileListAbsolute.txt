@@ -17,3 +17,4 @@ D:\MVC\Restaurant.Api\Restaurant.Infrastructure\obj\Debug\net8.0\refint\Restaura
 D:\MVC\Restaurant.Api\Restaurant.Infrastructure\obj\Debug\net8.0\Restaurant.Infrastructure.pdb
 D:\MVC\Restaurant.Api\Restaurant.Infrastructure\obj\Debug\net8.0\Restaurant.Infrastructure.genruntimeconfig.cache
 D:\MVC\Restaurant.Api\Restaurant.Infrastructure\obj\Debug\net8.0\ref\Restaurant.Infrastructure.dll
+D:\MVC\Restaurant.Api\Restaurant.Infrastructure\obj\Debug\net8.0\Restaurant.Infrastructure.sourcelink.json
