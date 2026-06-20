@@ -12,8 +12,8 @@ using Restaurant.Infrastructure.Persistence;
 namespace Restaurant.Infrastructure.Migrations
 {
     [DbContext(typeof(RestaurantDbContext))]
-    [Migration("20260615135738_addKiloCaloriesProperty")]
-    partial class addKiloCaloriesProperty
+    [Migration("20260618162751_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,12 +47,12 @@ namespace Restaurant.Infrastructure.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("ResturantId")
+                    b.Property<int>("RestaurantId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ResturantId");
+                    b.HasIndex("RestaurantId");
 
                     b.ToTable("Dishes");
                 });
@@ -93,11 +93,13 @@ namespace Restaurant.Infrastructure.Migrations
 
             modelBuilder.Entity("Restaurant.Domain.Entities.Dish", b =>
                 {
-                    b.HasOne("Restaurant.Domain.Entities.Resturant", null)
+                    b.HasOne("Restaurant.Domain.Entities.Resturant", "Restaurant")
                         .WithMany("Dishes")
-                        .HasForeignKey("ResturantId")
+                        .HasForeignKey("RestaurantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Restaurant");
                 });
 
             modelBuilder.Entity("Restaurant.Domain.Entities.Resturant", b =>

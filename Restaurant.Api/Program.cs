@@ -1,10 +1,10 @@
-using Microsoft.Extensions.Configuration;
+﻿using Restaurant.Api.Extensions;
 using Restaurant.Api.Middlewares;
 using Restaurant.Application.Extensions;
+using Restaurant.Domain.Entities;
 using Restaurant.Infrastructure.Extensions;
 using Restaurant.Infrastructure.Seeders;
 using Serilog;
-using Serilog.Events;
 
 namespace Restaurant.Api
 {
@@ -14,41 +14,46 @@ namespace Restaurant.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
             builder.Services.AddControllers();
 
+            builder.AddPresentation();
             builder.Services.AddInfrastructure(builder.Configuration);
             builder.Services.AddApplication();
-            builder.Host.UseSerilog((context, Configuration) =>
-                    Configuration.ReadFrom.Configuration(context.Configuration));
-                    
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+
             builder.Services.AddScoped<ErrorHandlingMiddleware>();
             builder.Services.AddScoped<RequestTimeLoggingMiddleware>();
+
+            // Serilog
+            builder.Host.UseSerilog((context, configuration) =>
+                configuration.ReadFrom.Configuration(context.Configuration));
+
             var app = builder.Build();
 
-            var scope = app.Services.CreateScope();
-            var seeder = scope.ServiceProvider.GetRequiredService<IRestaurantSeeder>();
-            await seeder.Seed();
+            using (var scope = app.Services.CreateScope())
+            {
+                var seeder = scope.ServiceProvider.GetRequiredService<IRestaurantSeeder>();
+                await seeder.Seed();
+            }
 
-
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-            app.UseMiddleware<ErrorHandlingMiddleware>();
-            app.UseMiddleware<RequestTimeLoggingMiddleware>();
-            app.UseSerilogRequestLogging();
 
             app.UseHttpsRedirection();
 
+            app.MapGroup("api/identity")
+                .WithTags("Identity")
+                .MapIdentityApi<User>();
             app.UseAuthorization();
 
+            app.UseMiddleware<ErrorHandlingMiddleware>();
+            app.UseMiddleware<RequestTimeLoggingMiddleware>();
+
+            app.UseSerilogRequestLogging();
 
             app.MapControllers();
 
