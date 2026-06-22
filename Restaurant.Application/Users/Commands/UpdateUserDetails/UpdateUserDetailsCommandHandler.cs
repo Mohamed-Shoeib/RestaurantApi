@@ -1,11 +1,11 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Restaurant.Application.Users;
 using Restaurant.Domain.Entities;
 using Restaurant.Domain.Exceptions;
 
-namespace Restaurant.Application.Users.Commands
+namespace Restaurant.Application.Users.Commands.UpdateUserDetails
 {
     public class UpdateUserDetailsCommandHandler(ILogger<UpdateUserDetailsCommandHandler> logger,
     IUserContext userContext,IUserStore<User> userStore) : IRequestHandler<UpdateUserDetailsCommand>
@@ -19,9 +19,10 @@ namespace Restaurant.Application.Users.Commands
             var dbUser = await userStore.FindByIdAsync(user!.Id, cancellationToken);
 
             if (dbUser == null)
-            {
-                throw new NotFoundException(nameof(User), user!.Id);
-            }
+                if (dbUser == null)
+                {
+                    throw new NotFoundException(nameof(User), user!.Id);
+                }
 
             dbUser.Nationality = request.Nationality;
             dbUser.DateOfBirth = request.DateOfBirth;

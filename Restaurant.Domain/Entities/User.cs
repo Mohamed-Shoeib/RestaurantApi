@@ -11,5 +11,7 @@ namespace Restaurant.Domain.Entities
     {
         public string? Nationality { get; set; }
         public DateOnly? DateOfBirth { get; set; }
+
+        public List<Resturant> OwnedRestaurants { get; set; } = [];
     }
 }
